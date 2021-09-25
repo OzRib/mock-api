@@ -5,7 +5,7 @@ const express = require('express');
 require('dotenv/config');
 
 const ARGS:Array<any> = process.argv;
-const file:string = ARGS[2].replace(/.ts/, '').replace(/.js/, '');
+const file:string = ARGS[2].replace(/\*.ts/, '').replace(/\*.js/, '');
 const exported:string|undefined = ARGS[3];
 const pwd = process.env.PWD;
 const routes = exported? require(`${pwd}/${file}`)[exported]: require(`${pwd}/${file}`);
